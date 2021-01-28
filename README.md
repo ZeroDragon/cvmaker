@@ -6,6 +6,8 @@ Este es un generador de CV inspirado complétamente el increíble trabajo de
 
 Síganla para más info :)
 
+Para ver el DEMO funcionando, solo vayan [aquí](https://zerodragon.github.io/cvmaker/)
+
 ## Forma de uso:
 - Para cambiar el avatar, solo den click en la imagen  
 - Los textos en Inglés, se pueden cambiar, solo denles click  
