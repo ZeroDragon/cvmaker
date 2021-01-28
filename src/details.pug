@@ -1,0 +1,65 @@
+.details
+  .headerSection
+    .header2(@click="toggleEditing('pi')")
+      template(v-if="pi.changing")
+        input(type="text" v-model="pi.value" @blur="toggleEditing('pi', false)" ref="pi")
+      template(v-else) {{pi.value}}
+
+    .information
+
+      .field(@click="toggleEditing('name')")
+        template(v-if="name.changing")
+          input(type="text" v-model="name.value" @blur="toggleEditing('name', false)" ref="name")
+        template(v-else) {{name.value}}
+
+      span.name(@click="toggleEditing('fname')")
+        template(v-if="fname.changing")
+          input(type="text" v-model="fname.value" @blur="toggleEditing('fname', false)" ref="fname")
+        template(v-else) {{fname.value}}
+
+      .field(@click="toggleEditing('nationality')")
+        template(v-if="nationality.changing")
+          input(type="text" v-model="nationality.value" @blur="toggleEditing('nationality', false)" ref="nationality")
+        template(v-else) {{nationality.value}}
+
+      span(@click="toggleEditing('nat')")
+        template(v-if="nat.changing")
+          input(type="text" v-model="nat.value" @blur="toggleEditing('nat', false)" ref="nat")
+        template(v-else) {{nat.value}}
+
+  .bodySection
+    .descSection(@click="toggleEditing('desc')")
+      template(v-if="desc.changing")
+        textarea(v-model="desc.value" @blur="toggleEditing('desc', false)" ref="desc")
+      template(v-else) {{desc.value}}
+    .header2
+      template(v-if="exp.changing")
+        input(type="text" v-model="exp.value" @blur="toggleEditing('exp', false)" ref="exp")
+      template(v-else): span(@click="toggleEditing('exp')") {{exp.value}} &nbsp;
+      input(type="button" @click="addCard" value="Add experience")
+    .cards
+      transition-group(name="flip-list" tag="div")
+        .card(v-for="card in orderedCards" :key="card.key")
+          .header
+            .timeframe
+              i.fas.fa-pencil-alt.noprint(@click="card.editing = true" v-if="!card.editing") &nbsp;
+              i.fas.fa-save.noprint(@click="saveCard(card)" v-if="card.editing") &nbsp;
+              i.fas.fa-trash-alt.noprint(@click="deleteCard(card)") &nbsp;
+              template(v-if="card.editing")
+                input(type="text" v-model="card.tInit").date
+                | - 
+                input(type="text" v-model="card.end").date
+              template(v-else)
+                | {{parseTime(card)}}
+            .title
+              template(v-if="card.editing")
+                input(type="text" v-model="card.title")
+              template(v-else) {{card.title}}
+          .position
+            template(v-if="card.editing")
+              input(type="text" v-model="card.position")
+            template(v-else) {{card.position}}
+          template(v-if="card.editing")
+            .descSection: textarea(v-model="card.desc")
+          template(v-else)
+            p {{card.desc}}

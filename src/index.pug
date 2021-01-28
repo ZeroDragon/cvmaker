@@ -1,0 +1,13 @@
+doctype html
+html(lang="es")
+  meta(charset="UTF-8")
+  head
+    title Mi CV Generator
+    link(rel="stylesheet" href="/styles.css")
+    script(src="https://unpkg.com/vue@next")
+  body
+    #resume
+      .resume(:class="theme")
+        include leftBar.pug
+        include details.pug
+    script(src="/app.js")

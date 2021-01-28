@@ -1,0 +1,48 @@
+.leftBar
+  .header
+    .bgHeader
+    i.fas.fa-paint-brush.noprint.colorChanger(@click="toggleTheme")
+    .img(@click="changeImage"): img(:src="avatar")
+    .applicant-name(@click="toggleEditing('apn')")
+      template(v-if="apn.changing")
+        input(type="text" v-model="apn.value" @blur="toggleEditing('apn', false)" ref="apn")
+      template(v-else) {{apn.value}}
+    .applicant-pos(@click="toggleEditing('app')")
+      template(v-if="app.changing")
+        input(type="text" v-model="app.value" @blur="toggleEditing('app', false)" ref="app")
+      template(v-else) {{app.value}}
+    .location
+      i.fas.fa-map-marker-alt
+      span(@click="toggleEditing('apo')")
+        template(v-if="apo.changing")
+          input(type="text" v-model="apo.value" @blur="toggleEditing('apo', false)" ref="apo")
+        template(v-else) {{apo.value}}
+  .contact
+    .header2(@click="toggleEditing('con')")
+      template(v-if="con.changing")
+        input(type="text" v-model="con.value" @blur="toggleEditing('con', false)" ref="con")
+      template(v-else) {{con.value}}
+    .section
+      .icon: i.fas.fa-mobile-alt
+      span(@click="toggleEditing('tel')")
+        template(v-if="tel.changing")
+          input(type="text" v-model="tel.value" @blur="toggleEditing('tel', false)" ref="tel")
+        template(v-else) {{tel.value}}
+    .section
+      .icon: i.fas.fa-envelope
+      span(@click="toggleEditing('mai')")
+        template(v-if="mai.changing")
+          input(type="text" v-model="mai.value" @blur="toggleEditing('mai', false)" ref="mai")
+        template(v-else) {{mai.value}}
+    .section.alt
+      .icon: i.fab.fa-linkedin
+      span(@click="toggleEditing('lin')")
+        template(v-if="lin.changing")
+          input(type="text" v-model="lin.value" @blur="toggleEditing('lin', false)" ref="lin")
+        template(v-else) {{lin.value}}
+    .section.alt
+      .icon: i.fab.fa-github
+      span(@click="toggleEditing('git')")
+        template(v-if="git.changing")
+          input(type="text" v-model="git.value" @blur="toggleEditing('git', false)" ref="git")
+        template(v-else) {{git.value}}

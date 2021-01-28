@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css')
+
+Lato = 'Lato', sans-serif
+Oswald = 'Oswald', sans-serif
+
+.resume
+  --green1: #9AB89D
+  --blue1: #1D2A36
+  --blue2: #272938
+  --shadow: rgba(9,9,9,0.6)
+  --black1: #2C2E2F
+  --gray1: #7D7E85
+  --white1: #F2F4F6
+  --white2: #E8EAE9
+  --purple1: #7572A1
+  --purple2: #571B6D
+  --purple3: #717499
+  --pink1: #A74B67
+  &.blueTheme
+    --headerBg: var(--green1)
+    --leftBarBg: var(--blue1)
+    --leftBarHeadColor: var(--blue1)
+    --detailsHeader2: var(--blue1)
+    --fieldColor: var(--green1)
+    --companyColor: var(--green1)
+    --positionColor: var(--gray1)
+    --decoration: var(--purple1)
+  &.purpleTheme
+    --headerBg: var(--purple2)
+    --leftBarBg: var(--blue2)
+    --leftBarHeadColor: var(--white1)
+    --detailsHeader2: var(--purple2)
+    --fieldColor: var(--purple3)
+    --companyColor: var(--pink1)
+    --positionColor: var(--purple2)
+    --decoration: var(--purple3)
+
+body
+  margin: 0
+  padding: 0
+  font-family: sans-serif
+  font-size: 0
+  background-color: var(--white1)
+  *
+    box-sizing: border-box
+
+.resume
+  max-width: 1200px
+  min-height: 100vh
+  display: flex
+  height: 100%
+
+/* LeftBar */
+.leftBar
+  width: 381px
+  background-color: var(--leftBarBg);
+  position: relative
+  .header
+    color: var(--leftBarHeadColor)
+    width: 381px
+    padding-top: 52px
+    text-align: center
+    position: relative
+    left: 40px
+    & *
+      position: relative
+    .colorChanger
+      position: absolute
+      top: 10px
+      left: 10px
+      color: var(--leftBarHeadColor)
+      font-size: 20px
+    .bgHeader
+      position: absolute
+      background-color: var(--headerBg)
+      box-shadow: 6px 13px 20px 0px var(--shadow)
+      width: 100%
+      height: calc(100% + 150px)
+      top: -100px
+      left: 0
+      transform: skew(0, 15deg)
+    .img
+      background-color: var(--blue1)
+      height: 230px
+      width: 230px
+      margin: 0 auto
+      border-radius: 50%
+      overflow: hidden
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: flex-end
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+    .applicant-name
+      margin-top: 30px
+      font-size: 40px
+      font-family: Oswald
+      font-weight: 600
+    .applicant-pos
+      padding: 0 90px
+      font-family: Lato
+      font-size: 25px
+      font-weight: 300
+    .location
+      font-family: Lato
+      font-weight: 400
+      text-align: left
+      padding: 32px 85px 45px 85px
+      display: flex
+      i
+        font-size: 25px
+        margin-right: 15px
+      span
+        font-size: 22px
+        letter-spacing: 0.02em
+  .contact
+    margin-top: 100px
+    padding-left: 30px
+    color: var(--white1)
+    .header2
+      padding-left: 6px
+      font-family: Oswald
+      font-size: 37px
+      margin-bottom: 20px
+    .section
+      display: flex
+      font-size: 22px
+      font-family: Lato
+      font-weight: 100
+      padding: 10px 0
+      &.alt
+        font-size: 19px
+      .icon
+        font-size: 23px
+        text-align: center
+        width: 40px
+        margin-right: 10px
+
+/* details */
+.details
+  flex-grow: 1
+  padding: 35px 30px 0 90px
+  .headerSection
+    background-color: var(--white2)
+    padding: 10px 20px
+  .header2
+    font-size: 37px
+    font-family: Oswald
+    color: var(--detailsHeader2)
+  .information
+    display: flex
+    padding-bottom: 30px
+    align-items: center
+    .field
+      font-family: Oswald
+      font-weight: 400
+      font-size: 25px
+      margin-right: 10px
+      color: var(--fieldColor)
+    span
+      font-family: Lato
+      font-size: 25px
+      font-weight: 300
+      &.name
+        margin-right: 40px
+  .bodySection
+    padding: 0 21px
+    margin: 32px 0
+    .header2
+      font-weight: 600
+  p, .descSection
+    color: var(--black1)
+    font-family: Lato
+    font-size: 20px
+    font-weight: 300
+    line-height: 1.2em
+    margin-bottom: 46px
+    white-space: pre-line
+  .card
+    padding: 0 40px
+    position: relative
+    .header
+      display: flex
+      font-family: Lato
+      .timeframe
+        font-size: 25px
+        font-weight: 700
+        margin-right: 20px
+        color: var(--black1)
+      .title
+        font-size: 25px
+        font-weight: 300
+        color: var(--companyColor)
+        font-weight: 500
+    .position
+      font-family: Lato
+      font-size: 20px
+      margin: 15px 0
+      color: var(--positionColor)
+    &:before, &:after
+      content: ''
+      position: absolute
+    &:before
+      top: 10px
+      left: -3px
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      border 2px solid var(--decoration)
+    &:after
+      top: 16px
+      left: 0px
+      width: 2px
+      height: calc(100% + 55px)
+      background-color: var(--decoration)
+    &:last-child:after
+      display: none
+  .cards
+    padding: 30px 0
+    p
+      margin-bottom: 60px
+
+input, textarea
+  border: none
+  background: transparent
+  font: inherit
+  color: inherit
+  padding: 0
+  margin: 0
+  &[type="button"]
+    font-size: 15px
+    border-radius: 4px
+    padding: 4px 10px
+    text-transform: uppercase
+    vertical-align: middle
+    background-color: var(--blue1)
+    color: var(--white1)
+    font-weight: 400
+  &.date
+    width: 60px
+textarea
+  padding: 4px
+  width: 100%
+  resize: vertical
+
+.flip-list-move
+  transition: transform 0.8s ease
+
+i.noprint
+  cursor: pointer
+
+@media print
+  input, .noprint
+    display: none!important
+
