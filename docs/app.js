@@ -10,7 +10,7 @@ const exp = {
 const Resume = {
   data: _ => ({
     theme: 'blueTheme',
-    avatar: '/avatar.png',
+    avatar: 'avatar.png',
     cards: [],
     pi: {
       changing: false,
