@@ -1,0 +1,22 @@
+{
+  "name": "cvmaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:build": "nodemon dev/builder.js",
+    "dev:serve": "browser-sync start --server dist --files dist --no-open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^7.5.0",
+    "pug": "^3.0.0",
+    "stylus": "^0.54.8"
+  }
+}
